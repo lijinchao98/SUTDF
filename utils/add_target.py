@@ -4,11 +4,12 @@ import random
 from math import pi, e, cos
 from scipy.ndimage import gaussian_filter1d
 
-def add_target_pixel(H):
+def add_target_pixel(H, pxl):
         """
         input:
-                curve: background pixel curve, [numpy.ndarray]
+                # curve: background pixel curve, [numpy.ndarray]
                 H: depth, [int]
+                pxl: pixel, [int]
         return:
                 new_curve: 1d npy
         param:
@@ -217,7 +218,7 @@ def add_target_pixel(H):
         k = a + b
 
         HSI_curve = np.load('../data/all_curve.npy')
-        r_inf = HSI_curve[random.randint(0, 10000)]
+        r_inf = HSI_curve[pxl]
         # r_inf = (0.084 + 0.170*u) * u
 #         r_inf = [0.02719089, 0.0275924 , 0.02821107, 0.02877388, 0.02949709, 0.03055052
 # , 0.03130687, 0.03205764, 0.03278143, 0.03345723, 0.03415905, 0.03431525

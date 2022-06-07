@@ -12,7 +12,7 @@ import numpy as np
 
 sys.stdout = Logger()
 
-def train_net(net, device, curve, label, epochs=1000, batch_size=32, lr=0.0001):
+def train_net(net, device, curve, label, epochs=1000, batch_size=1024, lr=0.00001):
     # 加载训练集
     Guide_dataset = HSI_Loader(curve, label)
     train_loader = torch.utils.data.DataLoader(dataset=Guide_dataset,
@@ -81,6 +81,6 @@ if __name__ == "__main__":
     # 将网络拷贝到deivce中
     net.to(device=device)
     # 指定训练集地址，开始训练
-    curve = '../data/guide_curve.npy'
-    label = '../data/guide_label.npy'
+    curve = '../data/train_data.npy'
+    label = '../data/train_label.npy'
     train_net(net, device, curve, label)

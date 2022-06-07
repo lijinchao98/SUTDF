@@ -3,7 +3,7 @@ import numpy as np
 from utils.add_target import add_target_pixel
 
 HSI_curve = np.load('../data/all_curve.npy')
-t = add_target_pixel(1.7)
+t = add_target_pixel(1.7,1)
 wavelength = [398.10, 401.30, 404.50, 407.60, 410.80, 414.00, 417.20, 420.40, 423.60, 426.80, 430.00,
               433.30, 436.50, 439.70, 442.90, 446.10, 449.40, 452.60, 455.80, 459.10, 462.30, 465.50,
               468.80, 472.00, 475.30, 478.50, 481.80, 485.10, 488.30, 491.60, 494.90, 498.10, 501.40,
